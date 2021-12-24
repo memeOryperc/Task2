@@ -1,5 +1,7 @@
 const express = require('express');
-const userRouter = require('./resources/users/user.router');
+const visitorRouter = require("./resources/visitor/visitor.router");
+const orderRouter = require("./resources/order/order.router");
+const bookRouter = require("./resources/book/book.router");
 
 const app = express();
 
@@ -13,6 +15,8 @@ app.use('/', (req, res, next) => {
   next();
 });
 
-app.use('/users', userRouter);
+app.use('/visitors', visitorRouter);
+app.use('/orders', orderRouter);
+app.use('/books', bookRouter);
 
 module.exports = app;
